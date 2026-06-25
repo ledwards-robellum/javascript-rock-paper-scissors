@@ -4,9 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="script.js"></script>
 </head>
 <body>
-    
+  <h1>Rock, Paper, Scissors</h1>
+  <button class="choice-button" onclick="playGame('rock')">✊ Rock</button>
+  <button class="choice-button" onclick="playGame('paper')">✋ Paper</button>
+  <button class="choice-button" onclick="playGame('scissors')">✌ Scissors</button>
+  <input id="round-max-input" placeholder="Max Rounds (Int)">
+  <p>Your Choice: <span id="player-choice">-</span></p>
+  <p>Computer's Choice: <span id="computer-choice">-</span></p>
+  <h2 id="round-result">Make a move to start!</h2>
+  <h3 id="player-score">Player Score: 0</h3>
+  <h3 id="computer-score">Computer Score: 0</h3>
+  <h2 id="round-count">Round: 0</h2>
+  <h3 id="round-max">Max Rounds: 5</h3>
+  <button onclick="restartGame()">Restart</button>
+  <script src="script.js"></script>
 </body>
 </html>
