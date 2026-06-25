@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+button {
+  padding: 8px;
+  margin: 4px;
+  background-color: palegreen;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: green;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: palevioletred;
+  border-color: gray;
+}
+
+input {
+  display: flex;
+  margin: 4px;
+  padding: 8px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.horizontal {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.vertical > *,
+.horizontal > * {
+  flex: 1;
+  margin: 4px;
+  padding: 8px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 8px;
+}
+
+.container {
+  display: flex;
+}
+
+.box {
+  flex: 1;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.5;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 8px;
+}
+
+#main-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+#title {
+  background-color: lightblue;
+}
+
+#player-choice,
+#player-score {
+  color: green;
+}
+
+#computer-choice,
+#computer-score {
+  color: red;
+}
+
+#round-result {
+  font-style: italic;
+}

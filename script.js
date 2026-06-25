@@ -27,8 +27,8 @@ function restartGame() {
   document.getElementById('round-count').textContent = "Round: " + count;
   document.getElementById('player-choice').textContent = playerChoice;
   document.getElementById('computer-choice').textContent = computerChoice;
-  document.getElementById('player-score').textContent = "Player Score: " + playerScore;
-  document.getElementById('computer-score').textContent = "Computer Score: " + computerScore;
+  document.getElementById('player-score').textContent = playerScore;
+  document.getElementById('computer-score').textContent = computerScore;
   document.getElementById('round-result').textContent = result;
   document.getElementById('round-max').textContent = "Max Rounds: " + roundMax;
 
@@ -39,7 +39,7 @@ function playGame(playerChoice) {
   const randomIndex = Math.floor(Math.random() * 3);
   const computerChoice = choices[randomIndex];
 
-  if (count < roundMax) {
+  if (count < (roundMax - 1)) {
     if (playerChoice === computerChoice) {
       result = "You tie this round!"
     } else if (
@@ -53,20 +53,19 @@ function playGame(playerChoice) {
       result = "You lose this round!"
       computerScore += 1;
     }
-    count += 1;
-
-    document.getElementById('round-count').textContent = "Round: " + count;
-    document.getElementById('player-choice').textContent = playerChoice;
-    document.getElementById('computer-choice').textContent = computerChoice;
-    document.getElementById('player-score').textContent = "Player Score: " + playerScore;
-    document.getElementById('computer-score').textContent = "Computer Score: " + computerScore;
-    document.getElementById('round-result').textContent = result;
-    document.getElementById('round-max').textContent = "Max Rounds: " + roundMax;
   } else {
     result = "Game Over!"
-    document.getElementById('round-result').textContent = result;
 
     getButtons("true");
   }
+
+  count += 1;
+  document.getElementById('round-count').textContent = "Round: " + count;
+  document.getElementById('player-choice').textContent = playerChoice;
+  document.getElementById('computer-choice').textContent = computerChoice;
+  document.getElementById('player-score').textContent = playerScore;
+  document.getElementById('computer-score').textContent = computerScore;
+  document.getElementById('round-result').textContent = result;
+  document.getElementById('round-max').textContent = "Max Rounds: " + roundMax;
 }
 
