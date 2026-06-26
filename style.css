@@ -23,6 +23,7 @@ button:hover {
 button:disabled {
   background-color: #d87093;
   border-color: #808080;
+
 }
 
 input {
@@ -49,7 +50,7 @@ input {
 .horizontal > * {
   flex: 1;
   margin: 4px;
-  padding: 8px;
+  padding: 4px;
   border-width: 2px;
   border-style: solid;
   border-radius: 8px;
@@ -69,11 +70,24 @@ input {
   border-radius: 8px;
 }
 
+.half {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  align-self: center;
+}
+
+.half * {
+  flex: 1;
+}
+
 #main-container {
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: space-between;
   min-height: 100vh;
 }
 
@@ -91,6 +105,3 @@ input {
   color: #ff0000;
 }
 
-#round-result {
-  font-style: italic;
-}

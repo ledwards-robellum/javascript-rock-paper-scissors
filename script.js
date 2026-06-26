@@ -58,14 +58,14 @@ function playGame(playerChoice) {
     }
   } else {
     if (playerScore > computerScore) {
-      result = "You won the game!"
+      result = "👑 You won the game! 👑"
       document.getElementById('round-result').style.backgroundColor = "#008000";
     } else if (playerScore < computerScore) {
-      result = "You lost the game!"
+      result = "🤕You lost the game! 🤕"
       document.getElementById('round-result').style.backgroundColor = "#ff0000";
 
     } else {
-      result = "You tied the game!"
+      result = "🎀 You tied the game! 🎀"
       document.getElementById('round-result').style.backgroundColor = "#d3d3d3";
 
     }
