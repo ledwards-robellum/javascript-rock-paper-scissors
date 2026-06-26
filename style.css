@@ -7,7 +7,7 @@ body {
 button {
   padding: 8px;
   margin: 4px;
-  background-color: palegreen;
+  background-color: #98fb98;
   border-color: black;
   border-style: solid;
   border-width: 2px;
@@ -16,13 +16,13 @@ button {
 }
 
 button:hover {
-  background-color: green;
+  background-color: #008000;
   cursor: pointer;
 }
 
 button:disabled {
-  background-color: palevioletred;
-  border-color: gray;
+  background-color: #d87093;
+  border-color: #808080;
 }
 
 input {
@@ -78,17 +78,17 @@ input {
 }
 
 #title {
-  background-color: lightblue;
+  background-color: #add8e6;
 }
 
 #player-choice,
 #player-score {
-  color: green;
+  color: #008000;
 }
 
 #computer-choice,
 #computer-score {
-  color: red;
+  color: #ff0000;
 }
 
 #round-result {
