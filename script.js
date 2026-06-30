@@ -30,16 +30,18 @@ function updateContent() {
   document.getElementById('round-result').textContent = result;
 }
 
+function updateResultBanner(color) {
+  document.getElementById('round-result').style.backgroundColor = color;
+}
 // Reset content
 function restartGame() {
   count = 0;
   playerScore = 0;
   computerScore = 0;
 
-  result = "New Game!"
+  result = "New Game!";
 
-  document.getElementById('round-result').style.backgroundColor = "white";
-
+  updateResultBanner("white");
   updateContent();
   getButtons("");
 }
@@ -52,32 +54,32 @@ function playGame(playerChoice) {
   // If count is below round max, run round
   if (count < (roundMax - 1)) {
     if (playerChoice === computerChoice) {
-      result = "You tie this round!"
-      document.getElementById('round-result').style.backgroundColor = "#d3d3d3";
+      result = "You tie this round!";
+      updateResultBanner("#d3d3d3");
     } else if (
       (playerChoice === "rock" && computerChoice === "scissors") ||
       (playerChoice === "paper" && computerChoice === "rock") ||
       (playerChoice === "scissors" && computerChoice === "paper")
     ) {
-      result = "You win this round!"
-      document.getElementById('round-result').style.backgroundColor = "#98fb98";
+      result = "You win this round!";
+      updateResultBanner("#98fb98");
       playerScore += 1;
     } else {
-      result = "You lose this round!"
+      result = "You lose this round!";
       document.getElementById('round-result').style.backgroundColor = "#d87093";
       computerScore += 1;
     }
   // Else compare score and display results
   } else {
     if (playerScore > computerScore) {
-      result = "👑 You won the game! 👑"
-      document.getElementById('round-result').style.backgroundColor = "#008000";
+      result = "👑 You won the game! 👑";
+      updateResultBanner("#008000");
     } else if (playerScore < computerScore) {
-      result = "🤕You lost the game! 🤕"
-      document.getElementById('round-result').style.backgroundColor = "#ff0000";
+      result = "🤕You lost the game! 🤕";
+      updateResultBanner("#ff0000");
     } else {
-      result = "🎀 You tied the game! 🎀"
-      document.getElementById('round-result').style.backgroundColor = "#d3d3d3";
+      result = "🎀 You tied the game! 🎀";
+      updateResultBanner("#d3d3d3");
     }
     getButtons("true");
   }
