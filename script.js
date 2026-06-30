@@ -33,6 +33,7 @@ function updateContent() {
 function updateResultBanner(color) {
   document.getElementById('round-result').style.backgroundColor = color;
 }
+
 // Reset content
 function restartGame() {
   count = 0;
@@ -41,7 +42,7 @@ function restartGame() {
 
   result = "New Game!";
 
-  updateResultBanner("white");
+  updateResultBanner('white');
   updateContent();
   getButtons("");
 }
@@ -57,31 +58,31 @@ function playGame(playerChoice) {
       result = "You tie this round!";
       updateResultBanner("#d3d3d3");
     } else if (
-      (playerChoice === "rock" && computerChoice === "scissors") ||
-      (playerChoice === "paper" && computerChoice === "rock") ||
-      (playerChoice === "scissors" && computerChoice === "paper")
+      (playerChoice === 'rock' && computerChoice === 'scissors') ||
+      (playerChoice === 'paper' && computerChoice === 'rock') ||
+      (playerChoice === 'scissors' && computerChoice === 'paper')
     ) {
       result = "You win this round!";
-      updateResultBanner("#98fb98");
+      updateResultBanner('#98fb98');
       playerScore += 1;
     } else {
       result = "You lose this round!";
-      document.getElementById('round-result').style.backgroundColor = "#d87093";
+      document.getElementById('round-result').style.backgroundColor = '#d87093';
       computerScore += 1;
     }
   // Else compare score and display results
   } else {
     if (playerScore > computerScore) {
       result = "👑 You won the game! 👑";
-      updateResultBanner("#008000");
+      updateResultBanner('#008000');
     } else if (playerScore < computerScore) {
       result = "🤕You lost the game! 🤕";
-      updateResultBanner("#ff0000");
+      updateResultBanner('#ff0000');
     } else {
       result = "🎀 You tied the game! 🎀";
-      updateResultBanner("#d3d3d3");
+      updateResultBanner('#d3d3d3');
     }
-    getButtons("true");
+    getButtons('true');
   }
 
   count += 1;
