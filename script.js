@@ -17,13 +17,7 @@ function getButtons(bool) {
   }
 }
 
-function restartGame() {
-  count = 0;
-  playerScore = 0;
-  computerScore = 0;
-
-  result = "New Game!"
-
+function updateContent() {
   document.getElementById('round-count').textContent = "Round: " + count;
   document.getElementById('player-choice').textContent = playerChoice;
   document.getElementById('computer-choice').textContent = computerChoice;
@@ -31,7 +25,18 @@ function restartGame() {
   document.getElementById('computer-score').textContent = computerScore;
   document.getElementById('round-max').textContent = "Max Rounds: " + roundMax;
   document.getElementById('round-result').textContent = result;
+}
+
+function restartGame() {
+  count = 0;
+  playerScore = 0;
+  computerScore = 0;
+
+  result = "New Game!"
+
   document.getElementById('round-result').style.backgroundColor = "white";
+
+  updateContent();
   getButtons("");
 }
 
@@ -74,12 +79,6 @@ function playGame(playerChoice) {
   }
 
   count += 1;
-  document.getElementById('round-count').textContent = "Round: " + count;
-  document.getElementById('player-choice').textContent = playerChoice;
-  document.getElementById('computer-choice').textContent = computerChoice;
-  document.getElementById('player-score').textContent = playerScore;
-  document.getElementById('computer-score').textContent = computerScore;
-  document.getElementById('round-max').textContent = "Max Rounds: " + roundMax;
-  document.getElementById('round-result').textContent = result;
+  updateContent();
 }
 
